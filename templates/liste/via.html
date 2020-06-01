@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if envoi%} Vous avez ete enregistre {% endif %}
+
+<form action="" method = "post" >
+
+{% csrf_token %}
+{{form.as_p}}
+
+</form>
+
+<input type="submit" value="Envoyer" >
+
+</body>
+</html>

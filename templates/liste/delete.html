@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Voulez-vous supprimer </h1>>
+<P>{{Personne.Nom}} {{Personne.Prenom}}</P>
+
+<form method="post" action="" >
+    {% csrf_token %}  <!-- Nous prenons bien soin d'ajouter le csrf_token -->
+   <input type="submit" value"Oui, supprime moi ça" /> - <a href="{% url "liste" %}">Pas trop chaud en fait</a>
+</form>
+
+</body>
+</html>

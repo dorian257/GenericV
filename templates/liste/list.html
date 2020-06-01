@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Voici les noms du personnel</h1>
+
+{% for per in Personne %}
+
+<ul>
+<li>
+    <a href="{% url "liste"  %}">{{per.Nom}} {{per.Prenom}} </a>
+</li>
+
+</ul>
+{% endfor %}
+
+</body>
+</html>
