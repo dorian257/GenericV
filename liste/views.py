@@ -4,16 +4,18 @@ from django.contrib.auth.decorators import login_required
 
 from .models import Personne
 from .forms import PersonneForm,Personal
+from django.views import View
+from django.shortcuts import HttpResponse,HttpResponseRedirect
 from django.views.generic import TemplateView,ListView,DetailView,CreateView,UpdateView,DeleteView
 
 
 # Create your views here.
 
 #une fonction qui affiche tout les personnes
-def affichage (request) :
-
-    var1 = Personne.objects.all()
-    return render(request,'liste/affichage.html',{'post':var1})
+class AffichageC (View):
+    def get (self,request):
+        var1 = Personne.objects.all()
+        return render(request,'liste/affichage.html',{'post':var1})
 
 #un formulaire de notre model
 
@@ -59,24 +61,32 @@ class Sup (DeleteView):
     context_object_name = 'Personne'
     success_url = reverse_lazy()
 
-def via (request):
-    form = Personal(request.POST  or None)
-
-    if form.is_valid():
-        Nom = form.cleaned_data['Nom']
-        Prenom = form.cleaned_data['Prenom']
-        Profession = form.cleaned_data['Profession']
-        Photo = form.cleaned_data['Photo']
-
-        envoi = True
-
-    return render(request,'liste/via.html',locals())
 
 
 
-def mod (request):
+class FormulaireC (View):
 
-    indent = Personne.objects.Nom()
-    form = Personal(instance=indent)
+    form_class = Personal
+    initial = {'key':'value'}
+    template_name = 'liste/formulaire.html'
 
-    return (request,'list/via.html',locals())
+    def get(self,request,*args,**kwargs):
+        form = self.form_class(initial={'key':'value'})
+        return render(request,'liste/formulaire.html',locals())
+
+    def post (self,request,*args,**kwargs):
+        form =self.form_class(request.POST or None)
+
+        if form.is_valid():
+            Nom = form.cleaned_data['Nom']
+            Prenom = form.cleaned_data['Prenom']
+            Profession = form.cleaned_data['Profession']
+            Photo = form.cleaned_data['Photo']
+
+            envoi = True
+
+            return HttpResponseRedirect('liste')
+
+        return render (request,'liste/formulaire.html',locals())
+
+
