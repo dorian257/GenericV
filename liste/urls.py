@@ -1,19 +1,24 @@
 from django.urls import path
-from django.conf.urls import url
 from .import views
 
 urlpatterns = [
 
-    path('formulaire',views.formulaire , name='formulaire1'),
-    path('faq',views.FAQView.as_view()),
-    path('list', views.ListPersonne.as_view() ,name= 'liste'),
-    path ('detail/<pk>' ,views.Pers.as_view(), name= 'detail'),
-    path ('nouveau' ,views.New.as_view(),name='formulaire'),
-    path ('update/<pk>' ,views.Update1.as_view(),name='update'),
-    path ('delete/<pk>' , views.Sup.as_view()),
-    path ('voir1',views.AffichageC.as_view(),name='vueClasse'),
-    path('formulaire1',views.FormulaireC.as_view(),name='classe'),
+    path('accueil' ,views.AccueilView.as_view(),name='accueil'),
 
+    path ('affichage',views.AffichageView.as_view(),name='affichage'),
+    path('list', views.ListePersonnelView.as_view() ,name= 'liste'),
+
+    path ('nouveau' ,views.NewView.as_view(),name='nouveau'),
+    path('formulaire',views.FormulaireView.as_view(),name='formulaire'),
+    path('formulairemodel',views.formulaire, name='formulaire1'),
+
+    path ('detail/<int:pk>' ,views.EmployeView.as_view(), name= 'detail'),
+
+    path ('update/<int:pk>' ,views.UpdateView.as_view(),name='update'),
+    path('modify',views.ModifyView.as_view(),name='modify'),
+
+    path ('delete/<int:pk>' , views.SupprimerView.as_view(),name='delete'),
+    path('supprimer',views.DeleteView.as_view(),name='supprimer')
 
 
 

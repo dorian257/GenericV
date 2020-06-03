@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Personnel</title>
+    <h1 id="x"  style="background: #68a5d4; padding: 30px; margin :-10px; height: 40px; weight: 98px; line-weight :20px <label align="Center" >   PERSONNEL </label></h1>
+</head>
+<body>
+
+<div class="Drop" style="background :#424558; padding: 0px; margin :-10px; height: 70px; weight: 101%; line-weight :50px;hover:background-color :#3388BB">
+
+  <nav style="display :inline-block; width:100;height :40 ;margin :0px ,padding :0px ;border-right :1px solid #ccccc ; text-align :center ;weight :40px; hover{backgroundcolor:green}">
+    <ul class="Drop_menu" style="float: left;" >
+
+        <li style="flot :left" >
+            <a href="{% url "liste" %}" style="text-decoration :none ;color: #fff; width: 50%;padding: 30px 20px; font: 20px arial, verdana, sans-serif;">Liste</a>
+            <a href="{% url "formulaire" %}" style="text-decoration :none ;color: #fff; width: 50%;padding: 30px 20px;font: 20px arial, verdana, sans-serif;">Ajouter</a>
+            <a href="{% url "modify" %}" style="text-decoration :none ;color: #fff; width: 50%;padding: 30px 20px;font: 20px arial, verdana, sans-serif;" >Modifier</a>
+            <a href="{% url "supprimer" %}" style="text-decoration :none ;color: #fff; width: 50%;padding: 30px 20px;font: 20px arial, verdana, sans-serif;">Supprimer</a>
+            <a href="{% url "logout" %}" style="text-decoration :none ;color: #fff; width: 50%;padding: 30px 20px;font: 20px arial, verdana, sans-serif;">LOGOUT</a>
+        </li>
+
+    </ul>
+  </nav>
+</div>
+</br>
+
+
+
+<table border="0"  width="90%" height="300">
+    	<tr>
+    		<th id="a" width="50%" height="10" colspan="2" >
+
+              <p>Nous vous propose un personnel competent ou des employes de qualite</br>
+    Ici vous allez voir une liste des employes avec leur qualification et l'historique dans leur domaine
+</p>
+
+    		</th>
+
+    		<th colspan="2" width="1%" height="10" id="o">
+    		<p>Nous avons des employe qualifier dans</p>
+                {% for per in post %}
+
+                <p>le domaine de <a href="{% url "detail" pk=per.pk %}">{{per.Profession}} </a></p>
+
+                {% endfor %}
+ </th>
+
+    	</tr>
+
+
+    </table>
+
+
+
+<table border="0"  width="90%" height="300">
+    	<tr>
+    		<th id="a" width="50%" height="10" colspan="2" >
+
+               <img src="48997428_2226424457616065_560517803635900416_o.jpg" width="730" height="300">
+
+    		</th>
+
+    		<th colspan="2" width="1%" height="10" id="o">
+    		<address> Adress <br>
+             Quartier :kibenga<br>
+		     Avenue :samedi<br>
+		     NUM :4<br>
+		     Envoie nous un <a href="mailto:dorianniyongabo@gmail.com">mail</a>
+           </address>
+ </th>
+
+    	</tr>
+
+
+    </table>
+
+
+</body>
+</html>

@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
 
 {% for per in Personne %}
 <ul>
     <li>
-        <a href=" {% url "delete" pk=per.pk %} ">{{per.Nom}} {{per.Prenom}} </a>
+        <a href=" {% url "update" pk=per.pk %} ">{{per.Nom}} {{per.Prenom}} </a>
     </li>
 </ul>
 
