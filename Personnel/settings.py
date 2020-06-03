@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'liste',
+
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/MEDIA/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/liste/accueil'
+LOGOUT_REDIRECT_URL = ''
