@@ -1,13 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'liste/bootstrap-4.5.0-dist/css/bootstrap.min.css' %}">
     <title>Title</title>
 </head>
 <body>
 
+<div class="row">
+<div class="col">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Info M4M</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{% url 'liste' %}">Liste<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{% url 'accueil' %}">Accueil</a>
+        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+
+    </div>
+  </div>
+</nav>
+
+</div>
+
+</div>
+
 <h1>Voici les noms du personnel</h1>
 
+<div class="jumbotron">
 {% for per in Personne %}
 
 <ul>
@@ -17,6 +42,6 @@
 
 </ul>
 {% endfor %}
-
+</div>
 </body>
 </html>

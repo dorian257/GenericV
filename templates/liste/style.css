@@ -1,28 +1,4 @@
 /*pour que le menu s'affiche de la meme facon dans tout les navigateurs*/
-body{
-	padding: 0px;
-	margin: 0px;
-}
-
-nav li{
-display :inline-block;
-width:100;
-height :40;
-margin :0px;
-padding :0px;
-border-right :1px solid #ccccc;
-text-align :center ;weight :40px;
-}
-
-nav li {hover :blackground-color :#3388BB}
-
-nav li a{
-display :block
-text-decoration:none;
-color: #fff;width: 50%;
-padding: 30px 20px;
-font: 20px arial, verdana, sans-serif;"
-         }
 
 
 

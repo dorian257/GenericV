@@ -18,8 +18,7 @@ urlpatterns = [
     path('modify',views.ModifyView.as_view(),name='modify'),
 
     path ('delete/<int:pk>' , views.SupprimerView.as_view(),name='delete'),
-    path('supprimer',views.DeleteView.as_view(),name='supprimer')
-
+    path('supprimer',views.DeleteView.as_view(),name='supprimer'),
 
 
 ]

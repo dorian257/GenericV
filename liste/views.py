@@ -30,7 +30,7 @@ class AffichageView (View):
 
 
 #La liste des noms des employes
-class ListePersonnelView (LoginRequiredMixin,ListView):
+class ListePersonnelView (ListView):
 
     model = Personne
     context_object_name = 'Personne'
@@ -126,5 +126,7 @@ class DeleteView (LoginRequiredMixin,ListView):
     model = Personne
     context_object_name = 'Personne'
     template_name = 'liste/delete.html'
+
+
 
 
