@@ -20,19 +20,23 @@
     <div class="navbar-nav">
         <a class="nav-item nav-link active" href="{% url 'liste' %}">Liste<span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="{% url 'accueil' %}">Accueil</a>
-        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
 
     </div>
   </div>
+            <form class="inline my-2 my-lg-0">
+        <a class="btn btn-outline-danger" href="{% url 'logout' %}">Logout</a>
+        </form>
 </nav>
 
 </div>
 
 </div>
 
-<h1>Voici les noms du personnel</h1>
 
-<div class="jumbotron">
+<div class="container">
+    <h1>Voici les noms du personnel</h1>
+
+    <div class="jumbotron">
 {% for per in Personne %}
 
 <ul>
@@ -43,5 +47,8 @@
 </ul>
 {% endfor %}
 </div>
+</div>
+
+
 </body>
 </html>
