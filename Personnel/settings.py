@@ -79,14 +79,22 @@ WSGI_APPLICATION = 'Personnel.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',   # Backends disponibles : 'postgresql', 'mysql', 'sqlite3' et 'oracle'.
+#        'NAME': 'Personne',             # Nom de la base de données
+#        'USER': 'root',
+#        'PASSWORD': '',
+#        'HOST': '127.0.0.1',                    # Utile si votre base de données est sur une autre machine
+#        'PORT': '3306',                         # ... et si elle utilise un autre port que celui par défaut
+#    }
+#}
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',   # Backends disponibles : 'postgresql', 'mysql', 'sqlite3' et 'oracle'.
-        'NAME': 'Personne',             # Nom de la base de données
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',                    # Utile si votre base de données est sur une autre machine
-        'PORT': '3306',                         # ... et si elle utilise un autre port que celui par défaut
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
@@ -136,5 +144,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/'
 LOGIN_REDIRECT_URL = '/liste/accueil'
-LOGOUT_REDIRECT_URL = 'login/'
+LOGOUT_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
