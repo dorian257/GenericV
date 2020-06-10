@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'liste/bootstrap-4.5.0-dist/css/bootstrap.min.css' %}">
+    <style>.ml-1{margin-left: ($spacer * .25)!important}</style>
     <title>Title</title>
 </head>
 <body>
@@ -40,9 +41,29 @@
 {% for per in Personne %}
 
 <ul>
-<li>
-    <a href="{% url "detail" pk=per.pk  %}">{{per.Nom}} {{per.Prenom}} </a>
-</li>
+
+
+   <li?
+
+
+    <li>
+        <div class="row">
+            <div class="col-3">
+                <a href="{% url "detail" pk=per.pk  %}" >{{per.Nom}} {{per.Prenom}} </a>
+            </div>
+
+            <div class="col-9">
+                <a class="btn btn-outline-primary" href="{% url "update" pk=per.pk %}">modifier</a>
+                <a class="btn btn-outline-danger" href="{% url "delete" pk=per.pk %}">delete</a>
+            </div>
+        </div>
+
+        <div class="ml-1">
+
+
+        </div>
+   </li>
+
 
 </ul>
 {% endfor %}

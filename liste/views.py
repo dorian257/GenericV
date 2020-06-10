@@ -92,40 +92,29 @@ class EmployeView (DetailView):
 
 
 
-"""Les Deux classes suivant permet de creer une vue qui modifier un employe.
+"""La classe suivant permet de creer une vue qui modifier un employe.
    """
 
 #vue generique UpdateView
-class UpdateView (UpdateView):
+class UpdateView (LoginRequiredMixin,UpdateView):
     model = Personne
     template_name = 'liste/update.html'
     form_class = PersonneForm
     success_url = reverse_lazy('liste')
     context_object_name = 'Personne'
 
-#vue affichant tout les employe afin de choisir celui qu'on veut modifier
-class ModifyView (LoginRequiredMixin,ListView):
-    model = Personne
-    context_object_name = 'Personne'
-    template_name = 'liste/modify.html'
-
-
 
 """Les Deux classes suivant permet de creer une vue qui supprime un employe.
    """
 
 #vue generique DeleteView
-class SupprimerView (DeleteView):
+class SupprimerView (LoginRequiredMixin,DeleteView):
     model = Personne
     template_name = 'liste/supprimer.html'
     context_object_name = 'Personne'
     success_url = reverse_lazy('liste')
 
-#vue affichant tout les employe afin de choisir celui qu'on veut supprimer
-class DeleteView (LoginRequiredMixin,ListView):
-    model = Personne
-    context_object_name = 'Personne'
-    template_name = 'liste/delete.html'
+
 
 
 
