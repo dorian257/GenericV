@@ -1,5 +1,6 @@
 from django.contrib.admin.templatetags.admin_list import result_list
 from django.db import models
+from django.contrib.auth.models import BaseUserManager,AbstractBaseUser
 
 
 
@@ -31,6 +32,10 @@ class Personne (models.Model):
 
 def __str__(self):
         return self.Prenom
+
+
+
+
 
 
 
